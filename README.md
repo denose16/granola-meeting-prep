@@ -126,6 +126,41 @@ Outputs land in `out/` (gitignored): `<meeting>.html`, `<meeting>.csv`, and the 
 | `--processor <tier>` | `core` | `lite · base · core · pro · ultra` |
 | `--out <dir>` | `out` | Output directory |
 
+## Slack integration
+
+The brief is delivered to Slack as a ranked **Block Kit digest** — one section per company (ICP traffic-light + score, one-liner, buying signals, attendees, and a suggested opener), hottest prospect first, with a link to the full branded report.
+
+**Wire it up** (≈1 minute):
+
+1. Create an [Incoming Webhook](https://api.slack.com/messaging/webhooks) → add it to a workspace → pick the channel → copy the `https://hooks.slack.com/services/T…/B…/…` URL.
+2. Put it in `.env`:
+   ```
+   SLACK_WEBHOOK_URL=https://hooks.slack.com/services/T…/B…/…
+   ```
+3. Run any brief — the digest posts to that channel automatically.
+
+**Graceful fallback (by design):** with no `SLACK_WEBHOOK_URL`, the digest is written to `out/slack-payload.json` and a preview prints to the console instead — so the pipeline (and any demo) never breaks on a missing secret. See [`samples/output/showcase-live-slack-payload.json`](samples/output/showcase-live-slack-payload.json) for a real generated payload.
+
+The digest renders roughly like this:
+
+```
+🥣 Pre-meeting brief: Granola × Linear — intro (warm intro via Sequoia)
+2 companies · 8 Jul 2026 16:00 · Live research via Parallel.ai
+──────────────────────────────────────────────
+🟢 Sequoia Capital Operations LLC — ICP 100/100 (Strong)
+   49 new investments in last 12 months · ~$56B AUM
+   • Roelof Botha — Managing Partner
+   Opener: which founder themes is the partner team prioritising this year?
+──────────────────────────────────────────────
+🟢 Linear Orbit, Inc. — ICP 95/100 (Strong)
+   $82M Series C 2025 · hit $100M revenue June 2025
+   • Karri Saarinen — Co-founder & CEO   • Jori Lallo — CPO
+   Opener: reference the "Code Intelligence for Linear Agent" post…
+📄 Full branded report attached
+```
+
+Code: digest builder + webhook POST in [`src/output/slack.ts`](src/output/slack.ts).
+
 ## Sample output
 
 **⭐ Flagship showcase — a full live multi-attendee brief:**
