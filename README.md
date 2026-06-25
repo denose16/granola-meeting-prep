@@ -6,6 +6,43 @@
 
 ---
 
+## 1. The brief (as I understood it)
+
+Granola set the task: **sign up for [Parallel.ai](https://parallel.ai) and build a working GTM automation that a company like Granola would actually use, producing real output** (a Slack message, a CSV, a formatted report, or similar). Parallel is the enrichment/research layer — "programmable web research" run against companies and people at scale.
+
+Three options were offered; the choice was mine:
+
+1. **Pre-meeting research brief** — given a calendar invite or attendee list, research each person + company and produce a structured briefing doc. ← **I picked this one.**
+2. Signal-based Slack alert — monitor target companies for a buying signal and post a digest to Slack.
+3. ICP qualifier — score a list of domains against Granola's ICP and explain the reasoning.
+
+Submission is a GitHub link, judged on the automation *working* and on the code being **clean / maintainable / legible**.
+
+**Why option 1:** it's the most on-brand for Granola. Granola is an AI notepad for people who live in meetings; this is its natural bookend — Granola captures what happens *in* the meeting, this prepares you *before* it. It's also a genuine GTM motion (rep enablement for the prospect calls an AE/SE runs all week), and it lets me fold option 3's ICP scoring in as one section of each brief — so the single build covers two of the three options.
+
+## 2. What I built & how it meets the brief
+
+| Brief requirement | How this satisfies it |
+|---|---|
+| Use Parallel.ai as the research layer | Every company + person is researched via the Parallel **Task API** with typed JSON output schemas; field descriptions are the prompt, biased to Granola's GTM context. Citations from the research `basis` are surfaced as Sources. |
+| A GTM automation useful to a company *like Granola* | A pre-meeting brief generator tuned to Granola's exact ICP (software / VC-PE / professional services, meeting-heavy roles) — and meta-relevant to a meeting product. |
+| Produce **real output** (Slack / CSV / report) | Produces **all three**: a branded HTML report, a CSV, and a Slack Block Kit digest. |
+| "or similar" / formatted, branded report | Each prospect's report card carries **their own logo + brand accent colour** (researched by Parallel) — a brief about Stripe looks like Stripe. |
+| Clean / maintainable / legible code | Mock-first architecture, a single `Researcher` interface, vendor isolation behind one client file, scoring as transparent code (not LLM), tiny dependency surface. See [Design notes](#design-notes). |
+| It should actually work | Verified end-to-end: typecheck clean, full mock run, **a real live Parallel run on Stripe** (committed in `samples/output/`). |
+
+## 3. What it is & what it's designed to do — outline
+
+A small, single-purpose TypeScript CLI. You hand it a meeting; it hands back a prep pack.
+
+- **Input** (`src/input`) — parse a `.ics` calendar invite or a plain attendee list; drop Granola-side (internal) attendees; group the rest by company domain.
+- **Research** (`src/parallel`, `src/research`) — for each prospect company and each attendee, run a Parallel Task; map the vendor response into a clean `Researched<T>` carrying the value plus per-field reasoning + citations.
+- **Score** (`src/research/icp.ts`) — rate each account 0–100 against Granola's ICP with a deterministic, explainable rubric (vertical fit · attendee meeting-intensity · size band · growth signal). Every point is traceable to a reason shown in the report.
+- **Render** (`src/output`, `src/branding`) — emit a **branded HTML report**, a **CSV** for the CRM, and a **Slack digest**. Prospects are ranked hottest-first.
+- **Modes** — runs in **mock mode by default** (zero API spend, deterministic) or `--live` for real Parallel calls. The pipeline is identical either way, so the demo never breaks.
+
+Designed to do one job well: turn "I've got three calls tomorrow" into three ranked, citation-backed, branded briefs — at roughly $0.10 a meeting.
+
 ## Why this, for Granola
 
 Granola is an AI notepad for people who live in meetings — knowledge workers at **software companies, VC/PE firms, and professional services orgs**. This tool is the natural bookend to that product: Granola captures what happens *in* the meeting; this prepares you *before* it.
@@ -121,6 +158,36 @@ src/
     csv.ts              flat CSV export
 samples/                sample invite + committed sample outputs
 ```
+
+---
+
+## 4. Thanks for reading this far — where this could go next
+
+Genuinely, thank you for reading to the bottom. If this project kept going, here are **four distinct directions** I'd be excited to build — deliberately spread across different Parallel APIs and different points in the GTM lifecycle, so they compound rather than overlap.
+
+### A. Always-on signal monitor → proactive Slack alerts
+*Uses Parallel's **Monitor API** (continuous web tracking + webhooks).*
+Today the tool is **reactive** — you ask for a brief when a meeting appears. This flips it to **proactive**: register your target accounts once, and Parallel watches for buying signals (new funding, leadership hires, headcount spikes, relevant job posts) and pushes a ranked digest to Slack the moment something moves.
+**Value:** catches the *timing* that makes outbound land — you reach out the day the signal fires, not weeks later. It's literally option 2 from the brief, and it pairs perfectly with the briefs: monitor surfaces *who to talk to now*, the brief preps the call.
+
+### B. Zero-touch daily brief (Calendar + CRM integration)
+*Adds Google/Outlook Calendar + a CRM write-back (HubSpot/Salesforce).*
+Each morning, auto-detect the day's external meetings, generate a brief for each, and drop them in Slack/email — no command, no copy-paste. Write the researched fields and ICP score straight back onto the CRM record.
+**Value:** removes the one manual step between "tool" and "habit." This is what turns a useful script into something a rep opens coffee-in-hand every day, and it keeps the CRM enriched as a side effect. Highest adoption lever of the four.
+
+### C. ICP-driven account discovery (turn the scorer into a generator)
+*Uses Parallel's **FindAll / Entity Search** APIs.*
+Right now the ICP rubric *grades* accounts you already have. Invert it: describe the ideal account in the rubric's own terms ("VC/PE firms, 50–500 staff, hiring revenue roles, EU") and have Parallel **find net-new accounts** that match, pre-scored and ranked.
+**Value:** moves upstream from meeting prep into **pipeline generation** — it fills the funnel instead of just servicing it. Reuses the exact scoring logic already built, so the rubric does double duty (qualify *and* prospect).
+
+### D. Close the loop with Granola's own notes (post-meeting flywheel)
+*The most Granola-native: consumes Granola's meeting notes/transcript as an input.*
+After the call, feed Granola's actual notes back in alongside the pre-meeting research: auto-draft a tailored follow-up, update the account with what was learned (budget, timeline, competitors named), and **re-score the ICP** on real signal rather than web inference.
+**Value:** completes the bookend — pre-meeting *and* post-meeting — and creates a **data flywheel**: every meeting sharpens the next brief. It's also the deepest product tie-in, since it's powered by Granola's own output, making the automation stickier the more the customer uses Granola.
+
+---
+
+*Distinctly: **A** changes the trigger (proactive), **B** changes the surface (zero-touch workflow), **C** changes the direction (net-new discovery), **D** changes the timeline (post-meeting + flywheel).*
 
 ---
 
