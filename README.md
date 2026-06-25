@@ -8,8 +8,8 @@
 
 ## 👀 See it in action
 
-### 🖱️ [**Interactive walkthrough — watch a meeting become a brief →**](https://denose16.github.io/granola-meeting-prep/)
-Click through all six pipeline stages (invite → parse → Parallel research → ICP score → branded report → deliver), with the research and scoring animating *as it happens*. Self-contained, no network calls.
+### 🖱️ [**Interactive walkthrough — watch a meeting become a brief →**](https://htmlpreview.github.io/?https://github.com/denose16/granola-meeting-prep/blob/main/docs/index.html)
+Click through all six pipeline stages (invite → parse → Parallel research → ICP score → branded report → deliver), with the research and scoring animating *as it happens*. Self-contained, no network calls. *(Source: [`docs/index.html`](docs/index.html). If GitHub Pages is enabled for this repo, it also serves at `denose16.github.io/granola-meeting-prep`.)*
 
 ### 📄 The real output it produces
 
