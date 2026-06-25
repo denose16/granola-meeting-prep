@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Granola//Meeting Prep Sample//EN
+BEGIN:VEVENT
+UID:sample-001@granola.ai
+DTSTART:20260702T150000Z
+DTEND:20260702T153000Z
+SUMMARY:Granola <> Acme SaaS — intro + discovery
+ORGANIZER;CN=Chris Pedregal:mailto:chris@granola.ai
+ATTENDEE;CN=Jane Okafor:mailto:jane@acme-saas.com
+ATTENDEE;CN=Roelof Botha:mailto:roelof@sequoiacap.com
+ATTENDEE;CN=Sam Partner:mailto:sam@mckinsey.com
+END:VEVENT
+END:VCALENDAR

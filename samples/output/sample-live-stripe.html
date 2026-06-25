@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pre-meeting brief — Stripe smoke test</title>
+<style>
+:root { --ink:#1a1a2e; --muted:#6b7280; --line:#e5e7eb; --bg:#f7f7fb; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+.wrap { max-width:860px; margin:0 auto; padding:32px 20px 64px; }
+.top { display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; }
+.brand { font-weight:600; color:var(--muted); }
+.brand span { color:var(--ink); }
+h1 { font-size:30px; margin:0 0 4px; letter-spacing:-0.02em; }
+.sub { color:var(--muted); margin:0 0 28px; }
+.chip { font-size:11px; font-weight:700; letter-spacing:0.04em; padding:4px 10px; border-radius:999px; }
+.chip-live { background:#dcfce7; color:#166534; }
+.chip-mock { background:#fef3c7; color:#92400e; }
+.card { background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden;
+  margin-bottom:28px; box-shadow:0 1px 3px rgba(0,0,0,.05); }
+.card-head { display:flex; align-items:center; gap:16px; padding:20px 24px; }
+.logo { width:56px; height:56px; border-radius:12px; background:#fff; object-fit:contain; padding:6px; flex:none; }
+.logo.mono { display:flex; align-items:center; justify-content:center; font-weight:700; color:#333; font-size:20px; }
+.card-head-text { flex:1; min-width:0; }
+.card-head-text h2 { margin:0; font-size:21px; }
+.card-head-text p { margin:2px 0 4px; opacity:.92; font-size:14px; }
+.card-head-text a { font-size:12px; text-decoration:none; opacity:.85; }
+.icp { text-align:center; background:rgba(255,255,255,.16); border-radius:12px; padding:8px 14px; flex:none; }
+.icp-score { font-size:28px; font-weight:800; line-height:1; }
+.icp-tier { font-size:11px; text-transform:uppercase; letter-spacing:.05em; margin-top:2px; }
+.card-body { padding:20px 24px 24px; }
+.facts { width:100%; border-collapse:collapse; margin-bottom:16px; }
+.facts th { text-align:left; width:150px; vertical-align:top; color:var(--muted); font-weight:600;
+  padding:6px 12px 6px 0; font-size:13px; }
+.facts td { padding:6px 0; border-bottom:1px solid var(--line); }
+details { margin:12px 0; }
+summary { cursor:pointer; font-weight:600; font-size:14px; color:var(--ink); }
+.icp-why ul { margin:8px 0 0; padding-left:18px; color:var(--muted); font-size:13px; }
+.icp-why li { margin:3px 0; }
+.people-h { font-size:13px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); margin:20px 0 10px; }
+.person { border-left:3px solid; padding:8px 0 8px 14px; margin-bottom:16px; }
+.person-top { display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; }
+.person-top a { font-size:12px; color:#6C5CE7; text-decoration:none; }
+.muted { color:var(--muted); font-size:13px; }
+.meeting-int { margin:6px 0; font-size:13px; }
+.recent { font-size:13px; color:#374151; }
+.talk { background:#f5f3ff; border-radius:10px; padding:10px 14px; margin-top:8px; }
+.talk-h { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:#6C5CE7; }
+.talk p { margin:4px 0 0; }
+.sources ol { margin:8px 0 0; padding-left:20px; font-size:13px; }
+.sources a { color:#6C5CE7; }
+.foot { color:var(--muted); font-size:12px; text-align:center; margin-top:32px; }
+.icp-strong .icp-score { color:#bbf7d0; } .icp-moderate .icp-score { color:#fde68a; } .icp-weak .icp-score { color:#fecaca; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">🥣 <span>Granola</span> · Pre-meeting brief</div>
+    <div><span class="chip chip-live">LIVE · Parallel</span></div>
+  </header>
+  <h1>Stripe smoke test</h1>
+  <p class="sub">1 prospect company · generated 2026-06-25 10:36 UTC</p>
+  
+  <section class="card">
+    <div class="card-head" style="background:#6C5CE7;color:#ffffff">
+      <img class="logo" src="https://logo.clearbit.com/stripe.com?size=128" alt="Stripe, Inc. logo"
+           onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'logo mono',textContent:'SI'}))" />
+      <div class="card-head-text">
+        <h2>Stripe, Inc.</h2>
+        <p>Stripe provides payment‑processing software and payment infrastructure (APIs) that enable e‑commerce and digital businesses to accept and manage online payments.</p>
+        <a href="https://stripe.com" style="color:#ffffff">stripe.com</a>
+      </div>
+      <div class="icp icp-strong">
+        <div class="icp-score">95</div>
+        <div class="icp-tier">Strong fit</div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <table class="facts">
+        <tr><th>Industry</th><td>Financial services / Fintech; Software (SaaS) — payments and payments infrastructure</td></tr><tr><th>HQ</th><td>South San Francisco, United States (dual‑headquartered with Dublin, Ireland)</td></tr><tr><th>Headcount</th><td>5001-10000 (approx. ~8,500 reported as of 2025) (Growing (inferred) — evidence of a large &amp; expanding workforce and global office footprint but no explicit 12‑month hiring time series in the corpus.)</td></tr><tr><th>Funding</th><td>Private — total funding amounts not disclosed in the supplied documents; corpus mentions a private valuation (~$159B) rather than a specific funding total.</td></tr><tr><th>Recent signals</th><td>1) Very large private valuation and payment volume (valuation ~ $159B; processed ~$1.9T in payment volume in 2025). 2) Continued global footprint / dual HQ and offices in major cities (San Francisco &amp; Dublin; offices in London, Paris, Singapore, Tokyo). 3) Large employee base (~8.5k as of 2025).</td></tr><tr><th>Open GTM roles</th><td>None found in the supplied corpus</td></tr><tr><th>Meeting culture</th><td>Distributed, global organisation with dual headquarters and multiple international offices — implies remote/hybrid teams, client‑facing roles and likely heavy use of collaboration tools (inference from office footprint and scale).</td></tr>
+      </table>
+
+      <details class="icp-why" open>
+        <summary>Why this ICP score</summary>
+        <ul><li>+40 Vertical: VC/PE/investment firm — core Granola ICP (meeting-dense, deal-driven).</li><li>+30 Attendees: 1/1 in meeting-heavy roles (sales/exec/founder/investor/consultant).</li><li>+10 Size: ~10000 employees — large enterprise, longer cycle.</li><li>+15 Signal: active growth/hiring/funding in the last 12 months — strong timing.</li></ul>
+      </details>
+
+      <h3 class="people-h">Attendees (1)</h3>
+      
+      <div class="person" style="border-left-color:#6C5CE7">
+        <div class="person-top">
+          <strong>Patrick Collison</strong>
+          <span class="muted">Co‑founder &amp; CEO · C-level · Founder/Exec</span>
+          <a href="http://linkedin.com/in/patrickcollison">LinkedIn ↗</a>
+        </div>
+        <p class="meeting-int">🗓 Meeting intensity: High — as Stripe's CEO he runs company strategy, communicates internally and externally (AMAs, podcasts), and frequently appears in public forums, implying a heavy meeting load.</p>
+        <p>Technical founder and entrepreneur: co‑founded Auctomatic, then (with his brother John) co‑founded Stripe in 2010 and serves as its CEO. Also listed as a co‑founder of the Arc Institute and frequently appears in podcasts and public interviews about scaling, product and strategy.</p>
+        <p class="recent">📡 Stripe Sessions 2025 AMA with Patrick and John; Stripe CEO internal email to employees; multiple LinkedIn posts; recent podcasts/interviews (e.g., Knowledge Project / a16z appearances).</p>
+        <div class="talk">
+          <span class="talk-h">Talking points</span>
+          <p>1) Reference Stripe Sessions / the 2025 AMA with you and John — ask what he learned from that format and what the team is prioritizing post‑AMA. 2) Mention his recent LinkedIn posts/announcements (e.g., on product/AI or the &quot;wallet/AI economy&quot; themes) and ask how Stripe is thinking about developer tooling and AI-driven payments. 3) Bring up his podcast remarks on scaling and big bets — ask which operating or decision‑making changes at Stripe have driven the most leverage recently.</p>
+        </div>
+      </div>
+
+      <details class="sources"><summary>Sources (16)</summary><ol><li><a href="http://en.wikipedia.org/wiki/Stripe%2C_Inc.">http://en.wikipedia.org/wiki/Stripe%2C_Inc.</a></li><li><a href="http://sec.gov/Archives/edgar/data/1691342/000169134221000001/xslFormDX01/primary_doc.xml">http://sec.gov/Archives/edgar/data/1691342/000169134221000001/xslFormDX01/primary_doc.xml</a></li><li><a href="http://stripe.com/">http://stripe.com/</a></li><li><a href="http://stripe.com/legal/spc">http://stripe.com/legal/spc</a></li><li><a href="http://stripe.com/newsroom/information">http://stripe.com/newsroom/information</a></li><li><a href="https://www.crunchbase.com/organization/stripe">https://www.crunchbase.com/organization/stripe</a></li><li><a href="http://linkedin.com/products/stripe">http://linkedin.com/products/stripe</a></li><li><a href="http://exa.ai/websets/directory/stripe-offices">http://exa.ai/websets/directory/stripe-offices</a></li><li><a href="http://schumer.senate.gov/imo/media/doc/Patrick%20Collison.pdf">http://schumer.senate.gov/imo/media/doc/Patrick%20Collison.pdf</a></li><li><a href="http://stripe.com/sessions/2025/ama-with-patrick-and-john-collison">http://stripe.com/sessions/2025/ama-with-patrick-and-john-collison</a></li><li><a href="http://craft.co/stripe/executives">http://craft.co/stripe/executives</a></li><li><a href="http://linkedin.com/in/patrickcollison">http://linkedin.com/in/patrickcollison</a></li><li><a href="http://stripe.com/newsroom/news/ceo-patrick-collisons-email-to-stripe-employees">http://stripe.com/newsroom/news/ceo-patrick-collisons-email-to-stripe-employees</a></li><li><a href="http://youtube.com/watch?v=mL1s9PVdqZI">http://youtube.com/watch?v=mL1s9PVdqZI</a></li><li><a href="http://linkedin.com/posts/patrickcollison_we-have-three-cool-announcements-today-activity-7378485227490480128-8Mv5">http://linkedin.com/posts/patrickcollison_we-have-three-cool-announcements-today-activity-7378485227490480128-8Mv5</a></li><li><a href="http://fs.blog/knowledge-project-podcast/patrick-collison">http://fs.blog/knowledge-project-podcast/patrick-collison</a></li></ol></details>
+    </div>
+  </section>
+  <footer class="foot">Generated by Granola Meeting-Prep · research via Parallel.ai Task API</footer>
+</div>
+</body>
+</html>

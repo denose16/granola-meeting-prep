@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.local
+.DS_Store
+*.log
+
+# Generated briefs (keep the committed samples in samples/output, ignore ad-hoc runs)
+out/
+
+# Never commit the raw key file
+Parallel Keys.md

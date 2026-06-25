@@ -1,0 +1,44 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": "🥣 Pre-meeting brief: Stripe smoke test",
+        "emoji": true
+      }
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "mrkdwn",
+          "text": "1 company(ies) · time TBD · Live research via Parallel.ai"
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "🟢 *Stripe, Inc.*  —  ICP *95/100* (Strong)\n_Stripe provides payment‑processing software and payment infrastructure (APIs) that enable e‑commerce and digital businesses to accept and manage online payments._\n*Signals:* 1) Very large private valuation and payment volume (valuation ~ $159B; processed ~$1.9T in payment volume in 2025). 2) Continued global footprint / dual HQ and offices in major cities (San Francisco & Dublin; offices in London, Paris, Singapore, Tokyo). 3) Large employee base (~8.5k as of 2025).\n• *Patrick Collison* — Co‑founder & CEO\n*Opener:* Reference Stripe Sessions / the 2025 AMA with you and John — ask what he learned from that format and what the team is prioritizing post‑AMA."
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "mrkdwn",
+          "text": "📄 Full branded report: `out-live/stripe-smoke-test.html`"
+        }
+      ]
+    }
+  ],
+  "text": "Pre-meeting brief: Stripe smoke test — 1 company(ies)"
+}
