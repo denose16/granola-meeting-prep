@@ -118,11 +118,19 @@ Outputs land in `out/` (gitignored): `<meeting>.html`, `<meeting>.csv`, and the 
 
 ## Sample output
 
-Committed in [`samples/output/`](samples/output):
+**⭐ Flagship showcase — a full live multi-attendee brief:**
+[**▶ View the rendered Granola × Linear brief**](https://htmlpreview.github.io/?https://github.com/denose16/granola-meeting-prep/blob/main/samples/output/showcase-live-granola-x-linear.html)
+*(or the [raw HTML](samples/output/showcase-live-granola-x-linear.html) / [CSV](samples/output/showcase-live-granola-x-linear.csv))*
 
-- **`sample-live-stripe.html`** — real Parallel research on Stripe / Patrick Collison (ICP 95, Strong). Open in a browser.
-- **`sample-mock-multi-company.html`** — three-company mock brief (Sequoia, Acme SaaS, McKinsey) showing per-company branding + ranking.
-- **`sample-slack-payload.json`** — the Slack Block Kit digest.
+A real, live Parallel run on a plausible warm-intro deal: **Granola → Linear, introduced via Sequoia** (Sequoia did lead Linear's Series B). Three real attendees across two companies and two verticals (SaaS + VC), each card branded with the company's own colour, ranked by ICP. Linear's brief surfaces its real $82M Series C and $100M revenue milestone — live, with citations.
+
+Other committed samples in [`samples/output/`](samples/output):
+
+- **`sample-live-stripe.html`** — real Parallel research on Stripe / Patrick Collison (ICP 95, Strong).
+- **`sample-mock-multi-company.html`** — three-company mock brief (Sequoia, Acme SaaS, McKinsey) showing branding + ranking at $0 spend.
+- **`*-slack-payload.json`** — the Slack Block Kit digests.
+
+> Note: GitHub serves `.html` as source text — use the **View** link above (or download the file) to see the rendered, branded report.
 
 ## Cost
 

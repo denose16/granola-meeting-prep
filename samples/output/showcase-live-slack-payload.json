@@ -1,0 +1,54 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": "🥣 Pre-meeting brief: Granola <> Linear — intro (warm intro via Sequoia)",
+        "emoji": true
+      }
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "mrkdwn",
+          "text": "2 company(ies) · 20260708T160000Z · Live research via Parallel.ai"
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "🟢 *Sequoia Capital Operations LLC*  —  ICP *100/100* (Strong)\n_A venture capital firm that invests in technology companies and partners with founders from seed through growth stages._\n*Signals:* 49 new investments in the last 12 months; active jobs portal (hiring); managing ~ $56B AUM (scale signal)\n• *Roelof Botha* — Managing Partner\n*Opener:* Ask which founder themes or categories he and the partner team are prioritising this year and whether they’re shifting allocation between early vs. growth investments."
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "🟢 *Linear Orbit, Inc.*  —  ICP *95/100* (Strong)\n_Linear builds a fast, design-forward issue-tracking and project-management SaaS product sold primarily to software and product teams._\n*Signals:* 1) $82M Series C in 2025 (part of $134.2M total funding). 2) Hit $100M in revenue in June 2025.\n• *Karri Saarinen* — Co‑founder & CEO\n• *Jori Lallo* — Co‑founder, Chief Product Officer (CPO)\n*Opener:* Mention Linear's recent \"Code Intelligence for Linear Agent\" post (May 14, 202"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "mrkdwn",
+          "text": "📄 Full branded report: `out-show/granola-linear-intro-warm-intro-via-sequoia.html`"
+        }
+      ]
+    }
+  ],
+  "text": "Pre-meeting brief: Granola <> Linear — intro (warm intro via Sequoia) — 2 company(ies)"
+}
