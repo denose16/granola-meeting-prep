@@ -6,6 +6,16 @@
 
 ---
 
+## 👀 See it in action — live sample output
+
+### [**▶ Open the rendered brief: Granola × Linear (warm intro via Sequoia)**](https://htmlpreview.github.io/?https://github.com/denose16/granola-meeting-prep/blob/main/samples/output/showcase-live-granola-x-linear.html)
+
+A **real, live Parallel run** on a plausible deal — three real attendees across two companies and two ICP verticals (SaaS + VC), each card branded in the company's own colour and ranked by ICP fit. Linear's brief surfaces its actual $82M Series C and $100M revenue milestone, with citations.
+
+*(GitHub serves `.html` as source text, so use the View link above. Raw files: [HTML](samples/output/showcase-live-granola-x-linear.html) · [CSV](samples/output/showcase-live-granola-x-linear.csv) · [Slack payload](samples/output/showcase-live-slack-payload.json). More in [Sample output](#sample-output).)*
+
+---
+
 ## 1. The brief (as I understood it)
 
 Granola set the task: **sign up for [Parallel.ai](https://parallel.ai) and build a working GTM automation that a company like Granola would actually use, producing real output** (a Slack message, a CSV, a formatted report, or similar). Parallel is the enrichment/research layer — "programmable web research" run against companies and people at scale.
