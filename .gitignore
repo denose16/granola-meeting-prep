@@ -10,3 +10,6 @@ out/
 
 # Never commit the raw key file
 Parallel Keys.md
+
+# Private interview material — call transcripts, notes, read-outs. NEVER push to the public repo.
+Calls/
